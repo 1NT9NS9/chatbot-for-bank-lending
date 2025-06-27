@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "Chatbot Lending API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for Chatbot Mini-MVP"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ask question",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"Какие ставки по кредиту для малого бизнеса?\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/chat/ask",
+          "host": ["{{base_url}}"],
+          "path": ["chat", "ask"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    }
+  ]
+} 

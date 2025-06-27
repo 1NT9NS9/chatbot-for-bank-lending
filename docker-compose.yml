@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: ankane/pgvector:latest
+    environment:
+      POSTGRES_USER: chat
+      POSTGRES_PASSWORD: chat
+      POSTGRES_DB: chat
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  chat-service:
+    build: ./chat-service
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://chat:chat@postgres:5432/chat
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  etl_job:
+    build: ./etl_job
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://chat:chat@postgres:5432/chat
+    depends_on:
+      - postgres
+    profiles:
+      - etl
+
+volumes:
+  pgdata: 
