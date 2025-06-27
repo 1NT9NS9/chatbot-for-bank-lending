@@ -14,7 +14,7 @@ It is built with FastAPI, Postgres + pgvector and Gemini LLM.
 
 ## Project architecture
 
-   ![image](https://github.com/user-attachments/assets/129f7f8e-8c2a-45eb-ab03-537ebf31d0ac)
+![image](https://github.com/user-attachments/assets/0d3b2f06-844f-421c-b694-302997512932)
    
 ---
 
