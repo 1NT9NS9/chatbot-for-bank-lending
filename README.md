@@ -12,7 +12,9 @@ It is built with FastAPI, Postgres + pgvector and Gemini LLM.
 6. Running the ETL job manually  
 7. Testing & QA  
 
-![image](https://github.com/user-attachments/assets/5dee7d2f-caa0-4e51-a7a5-4fe1e6dbeaf5)
+##Project architecture
+![image](https://github.com/user-attachments/assets/07da0942-eb92-4d0e-b1fb-370137103726)
+
 
 ---
 
