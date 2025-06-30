@@ -118,7 +118,7 @@ The script splits documents, embeds them and loads into Postgres (`document` tab
 
 ## 7. Testing & QA
 * Unit tests – `pytest` (`tests/` folder)
-* Static analysis – Black, isort, flake8, Pyright (pre-commit)
+* Static analysis – Black, isort, flake8, Pyright (pre-commit) !(Decided to remove from the project)
 * Observability – `/metrics` for Prometheus, structured logs in container output.
 
 ---
